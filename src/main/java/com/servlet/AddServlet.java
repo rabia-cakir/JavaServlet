@@ -1,8 +1,8 @@
 package com.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +18,7 @@ public class AddServlet extends HttpServlet {
 
 	//doPost method is called through service method
 	
-	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
 	{
 		
 		//getParamater will give you a string
@@ -28,12 +28,17 @@ public class AddServlet extends HttpServlet {
 		
 		int k = i + j;
 		
-		PrintWriter out=res.getWriter();
+		req.setAttribute("k",k);
 		
-		out.println("result is : "+k);
+		
+		//request dispatcher : we are dispatching the request from one servlet to the servlet
+		
+		RequestDispatcher rd=req.getRequestDispatcher("sq");
+		rd.forward(req, res);
+		
 	}
 	
-	//doGet method is called through service method
+
 	
 	
 }
