@@ -15,12 +15,10 @@ public class AddServlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 8242988260558909598L;
 
-	//you don't have to create this object (req, res) yourself
-	//this object will be created by TomCat
-	//you just need to get a reference of it 
+
+	//doPost method is called through service method
 	
-	//method name has to be "service"
-	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException
 	{
 		
 		//getParamater will give you a string
@@ -34,5 +32,8 @@ public class AddServlet extends HttpServlet {
 		
 		out.println("result is : "+k);
 	}
-
+	
+	//doGet method is called through service method
+	
+	
 }
