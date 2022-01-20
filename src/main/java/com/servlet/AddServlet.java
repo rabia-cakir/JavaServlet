@@ -28,13 +28,12 @@ public class AddServlet extends HttpServlet {
 		
 		int k = i + j;
 		
-		req.setAttribute("k",k);
-		
+		res.sendRedirect("sq?k="+k);
 		
 		//request dispatcher : we are dispatching the request from one servlet to the servlet
 		
-		RequestDispatcher rd=req.getRequestDispatcher("sq");
-		rd.forward(req, res);
+		//RequestDispatcher rd=req.getRequestDispatcher("sq");
+		//rd.forward(req, res);
 		
 	}
 	

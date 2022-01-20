@@ -19,12 +19,14 @@ public class SqServlet extends HttpServlet {
 	{
 		
 		
-		int k = (int) req.getAttribute("k");
+		int k = Integer.parseInt(req.getParameter("k"));
 		
 		k=k*k;
 		
 		//this is how you get the writer object so that you can print something on the page
 		PrintWriter out = res.getWriter();
 		out.println("result is : "+k);
+		
+		
 	}
 }
